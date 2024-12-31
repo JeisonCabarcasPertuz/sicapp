@@ -1,40 +1,100 @@
 .tableContainer {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     margin-top: 20px;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tableTitle {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .tableWrapper {
+    width: 100%;
   }
   
   .recordsTable {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    font-size: 14px;
   }
   
   .recordsTable th,
   .recordsTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #e0e0e0;
   }
   
   .recordsTable th {
-    background-color: #f2f2f2;
+    background-color: #f5f5f5;
     font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
   }
   
   .recordsTable tr:nth-child(even) {
     background-color: #f9f9f9;
   }
   
+  .recordsTable tr:hover {
+    background-color: #f0f0f0;
+  }
+  
   .backButton {
+    margin-top: 20px;
     padding: 10px 20px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
   }
   
   .backButton:hover {
     background-color: #2980b9;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .recordsTable {
+      border: 0;
+    }
+  
+    .recordsTable thead {
+      display: none;
+    }
+  
+    .recordsTable tr {
+      margin-bottom: 10px;
+      display: block;
+      border-bottom: 2px solid #ddd;
+    }
+  
+    .recordsTable td {
+      display: block;
+      text-align: right;
+      font-size: 13px;
+      border-bottom: 1px dotted #ccc;
+    }
+  
+    .recordsTable td:last-child {
+      border-bottom: 0;
+    }
+  
+    .recordsTable td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
   }
   
   
