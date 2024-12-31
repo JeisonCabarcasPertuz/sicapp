@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FormData, FormErrors } from '../utils/types';
 import { validateForm } from '../utils/validations';
-import styles from '../componets/Form.module.css';
+import styles from './Form.module.css';
 
 const marcasPC = ['Dell', 'HP', 'Lenovo', 'Asus', 'Acer', 'Apple'];
 
@@ -32,6 +32,11 @@ const Form: React.FC = () => {
       console.log('Formulario enviado:', formData);
       // Aquí puedes enviar los datos a tu backend
     }
+  };
+
+  const handleConsultar = () => {
+    console.log('Consultando registros...');
+    // Aquí puedes implementar la lógica para consultar registros
   };
 
   return (
@@ -91,7 +96,10 @@ const Form: React.FC = () => {
         {errors.email && <span className={styles.error}>{errors.email}</span>}
       </div>
 
-      <button type="submit" className={styles.submitButton}>Enviar</button>
+      <div className={styles.buttonGroup}>
+        <button type="submit" className={styles.submitButton}>Enviar</button>
+        <button type="button" className={styles.consultarButton} onClick={handleConsultar}>Consultar Registros</button>
+      </div>
     </form>
   );
 };
