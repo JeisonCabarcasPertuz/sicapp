@@ -11,5 +11,11 @@ export interface FormData {
     marcaPC?: string;
     email?: string;
   }
+
+  export interface dataResponse {
+    status?: string;
+    message?: string;
+    data?: [] | object;
+  }
   
   
