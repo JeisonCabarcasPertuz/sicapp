@@ -15,7 +15,8 @@ export interface FormData {
   export interface dataResponse {
     status?: string;
     message?: string;
-    data?: [] | object;
+    data?: [];
   }
+  
   
   

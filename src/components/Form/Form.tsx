@@ -20,12 +20,6 @@ const Form: React.FC = () => {
     data: [],
   });
 
-  const [dataResponse, setDataResponse] = useState<dataResponse>({
-    status: "",
-    message: "",
-    data: {},
-  });
-
   const [errors, setErrors] = useState<FormErrors>({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({
@@ -34,7 +28,11 @@ const Form: React.FC = () => {
     isSuccess: false,
   });
   const [showForm, setShowForm] = useState(true);
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState<dataResponse>({
+    status: "",
+    message: "",
+    data: [],
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -65,7 +63,6 @@ const Form: React.FC = () => {
           },
         });
         if (result.status === 201) {
-          setDataResponse(result.data);
           setModalContent({
             title: "Éxito",
             message: "Registro creado con éxito",
@@ -124,7 +121,7 @@ const Form: React.FC = () => {
   }, []);
 
   if (!showForm) {
-    return <RecordsTable records={records} onBack={() => setShowForm(true)} />;
+    return <RecordsTable records={records?.data || []} onBack={() => setShowForm(true)} />;
   }
 
   return (
