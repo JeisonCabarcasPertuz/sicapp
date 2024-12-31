@@ -1,10 +1,13 @@
 import React from 'react';
-import Form from './componets/Form';
+import Form from './components/Form/Form';
+import styles from './App.module.css';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Form />
+    <div className={styles.app}>
+      <div className={styles.container}>
+        <Form />
+      </div>
     </div>
   );
 };

@@ -1,0 +1,77 @@
+.form {
+  background-color: #ecf0f1;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #2c3e50;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 0.875em;
+  margin-top: 5px;
+  display: block;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.submitButton,
+.consultarButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #27ae60;
+}
+
+.consultarButton {
+  background-color: #3498db;
+  color: white;
+}
+
+.consultarButton:hover {
+  background-color: #2980b9;
+}
+
